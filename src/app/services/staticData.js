@@ -1,15 +1,26 @@
 define(function () {
-    return{
-       eventTypes: [
+   return {
+      eventTypes: [
+          {
+             name: "接单确认",
+             value: "EVTNA3"
+          },
+          {
+             name: "执行完成",
+             value: "EVTNA4"
+          }
+      ],
+      projects: [
            {
-              name: '接单确认',
-              value: "EVTNA3"
+              name: "KRCC",
+              value: "KRCC"
            },
-           {
-              name: '执行完成',
-              value: "EVTNA4"
-           }
-       ]
+          {
+             name: "BMW",
+             value: "BMW"
+          }
 
-    };
+      ]
+
+   };
 })

@@ -1,10 +1,15 @@
 define(['services/config', 'services/base64Services'], function (config, base64) {
-   var user = localStorage.getItem("userName");
 
-   var url = config.baseUrl + "EO/EOQuickSearchDriver",
+   var userInfo = localStorage.getItem("user");
+   userInfo = JSON.parse(userInfo);
+   var userName = userInfo.userName;
+   var password = userInfo.password;
+   //var userId = userInfo.userID;
+
+   var url = config.baseUrl + "EO/EOQuickSearchMobile",
         init = function () {
-           var auth = 'Basic ' + base64.encode(config.userName + ':' + config.password);
-           amplify.request.define('EOQuickSearchDriver', 'ajax', {
+           var auth = 'Basic ' + base64.encode(userName + ':' + password);
+           amplify.request.define('EOQuickSearchMobile', 'ajax', {
               url: url,
               dataType: 'json',
               type: 'POST',
@@ -27,7 +32,7 @@ define(['services/config', 'services/base64Services'], function (config, base64)
            }).promise();
         },
 
-        eoQuickSearch = function (type) {
+        eoQuickSearch = function (type,project) {
            var param = {
               SerType: 'AND',
               EO: [''],
@@ -74,12 +79,13 @@ define(['services/config', 'services/base64Services'], function (config, base64)
               rec_Disc: '',
               rec_Group1: '',
               rec_Group2: '',
-              transDriverID: user,
-              statusGroup: type
+              transDriverID: "",
+              statusGroup: type,
+              project: project
 
            };
 
-           return defferRequest('EOQuickSearchDriver', param);
+           return defferRequest('EOQuickSearchMobile', param);
         };
 
    var organizeResult = function (arr) {

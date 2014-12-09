@@ -1,14 +1,14 @@
 ﻿define(['services/taskServices', 'services/eventServices', 'services/staticData'], function (taskServices, eventServices, staticData) {
-
    var eoList = ko.observableArray();
    var selectedItem = {};
+   var currentProject = null;
 
 
    taskServices.mapObservable(selectedItem);
 
    var refresh = function () {
       eoList.removeAll();
-      taskServices.eoQuickSearch("O").then(function (result) {
+      taskServices.eoQuickSearch("O", currentProject.value).then(function (result) {
          if (!result.errorMessage || result.errorMessage == "OK") {
             var arr = taskServices.organizeResult(result);
             arr.forEach(
@@ -17,11 +17,9 @@
                 }
             );
          }
-
-
       });
    };
-   refresh();
+
 
    var selectItem = function (data) {
 
@@ -31,11 +29,9 @@
    };
 
    var popForm = function (data) {
-
       taskServices.mapObservable(selectedItem, data);
       $("#popupaction").popup("open");
    };
-
 
 
    var submit = function (item, type) {
@@ -85,6 +81,13 @@
    };
    // var eventType = ko.observable(staticData.eventTypes[0].value);
    var eventType = ko.observable();
+   var selectProject = function (data) {
+      currentProject = data;
+      refresh();
+      $.mobile.changePage("#eodetail");
+
+
+   };
 
    return {
       selectedItem: selectedItem,
@@ -93,6 +96,8 @@
       eoList: eoList,
       eventTypes: staticData.eventTypes,
       eventType: eventType,
-      submit: submit
+      submit: submit,
+      projects: staticData.projects,
+      selectProject: selectProject
    };
 });

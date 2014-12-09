@@ -1,86 +1,131 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iTMS</title>
-<link rel="stylesheet" href="themes/bladecolor.min.css" />
-<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-<link rel="stylesheet" href="js/jquery.mobile.structure-1.4.4.min.css" />
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/jquery.mobile-1.4.4.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>iTMS</title>
+    <link rel="stylesheet" href="themes/bladecolor.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.5.min.css" />
+
 </head>
 <body>
-<div data-role="page" data-theme="a" id="login" >
-  <div data-role="popup" id="popupLogin" data-theme="b" data-overlay-theme="a" class="ui-corner-all">
-    <form>
-      <div style="padding:10px 20px;">
-        <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/145-persondot@2x.png" height="40px" /></a></p>
-        <label for="un" class="ui-hidden-accessible">Username:</label>
-        <input type="text" name="user" id="un" value="" placeholder="用户名" data-theme="b">
-        <label for="pw" class="ui-hidden-accessible">Password:</label>
-        <input type="password" name="pass" id="pw" value="" placeholder="密码" data-theme="b" data-clear-btn="true">
-        <p align="center"><a href="#indexpage" class="ui-btn ui-btn-a ui-btn-inline ui-shadow  ui-corner-all ui-icon-check ui-btn-icon-left" data-transition="slideup">登录</a></p>
-      </div>
-    </form>
-  </div>
-  <div data-role="content">
-    <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="25px"></a></p>
-    <br>
-    <p align="center"><a href="#"><img class="popphoto" src="images/main.png" height="160px"></a></p>
-    <br>
-    <br>
-    <div class="ui-nodisc-icon ui-alt-icon"><!-- Classes added to the wrapper -->
-      <p align="center"> &nbsp; <a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline">Signin</a></p>
+    <!--<script src="cordova.js"></script>-->
+    <script src="vendor/less/dist/less-1.7.3.js"></script>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.js"></script>
+    <script src="vendor/amplify/lib/amplify.js"></script>
+    <script src="vendor/knockoutjs/build/output/knockout-latest.js"></script>
+    <script src="lib/knockout.mapping-latest.js"></script>
+    <script src="lib/koExternalTemplateEngine_all.js"></script>
+    <script src="lib/ko.extentions.js"></script>
+
+    <script src="vendor/requirejs/require.js" data-main="app/main.js"></script>
+    <div data-role="page" data-theme="a" id="login">
+        <div data-role="popup" id="popupLogin" data-theme="b" data-overlay-theme="a" class="ui-corner-all">
+            <form>
+                <div style="padding: 10px 20px;">
+                    <p align="center"><a href="#">
+                        <img class="popphoto" src="images/Glyphish/icons/145-persondot@2x.png" height="40px" /></a></p>
+                    <label for="un" class="ui-hidden-accessible">Username:</label>
+                    <input type="text" name="user" id="un"  data-bind="value:userName" placeholder="用户名" data-theme="b">
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="pass" id="pw"  data-bind="value:password" placeholder="密码" data-theme="b" data-clear-btn="true">
+                    <p align="center"><a href="#indexpage" class="ui-btn ui-btn-a ui-btn-inline ui-shadow  ui-corner-all ui-icon-check ui-btn-icon-left" data-bind="click:login" data-transition="slideup">登录</a></p>
+                </div>
+            </form>
+        </div>
+        <div data-role="content">
+            <p align="center"><a href="#">
+                <img class="popphoto" src="images/itmslogo.png" height="25px"></a></p>
+            <br>
+            <p align="center"><a href="#">
+                <img class="popphoto" src="images/main.png" height="160px"></a></p>
+            <br>
+            <br>
+            <div class="ui-nodisc-icon ui-alt-icon">
+                <!-- Classes added to the wrapper -->
+                <p align="center">&nbsp; <a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline">Signin</a></p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Start of first page: #one -->
-<div data-role="page" id="indexpage"> 
-  
-  <!-- /panel -->
-  
-  <div data-role="panel" id="panelgrid" data-position="right" data-display="overlay" data-theme="a"> 
-    <!-- panel content goes here -->
-    <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
-      <font color="#999999" size="2">我的任务<br>
-      </font></p>
-    <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
-      <li><a href="eoindex.html" rel="external"><img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
-      <li><a href="eoindex_u.html" rel="external"><img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
-    </ul>
-    <div class="ui-nodisc-icon ui-alt-icon"><!-- Classes added to the wrapper -->
-      <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
-      <p align="center"> &nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
+    <div data-role="page" id="errMessage" data-overlay-theme="a" data-theme="c">
+        <div data-role="header" data-theme="a" class="ui-corner-top">
+            <h1>错误信息</h1>
+            <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">返回</a>
+
+        </div>
+        <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+            <p>对不起，操作失败，请重试！</p>
+        </div>
     </div>
-  </div>
-  <!-- /panel -->
-  
-  <div data-role="popup" id="popupsignout" data-theme="b" data-overlay-theme="a" class="ui-corner-all">
-    <form>
-      <div style="padding:10px 20px;">
-        <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/63-runner@2x.png" height="25px" /></a><br>
-          firstname, lastname<br>
-          计划员<br>
-          <br>
-          <font color="#999999" size="2">是否退出当前账号?</font></p>
-        <p align="center"><a href="#" data-rel="back" class="ui-btn ui-shadow  ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline">取消</a><a href="#login" data-transition="slidedown" class="ui-btn ui-shadow ui-btn-a ui-corner-all ui-icon-check ui-btn-icon-left ui-btn-inline">确认</a></p>
-      </div>
-    </form>
-  </div>
-  <div data-role="content">
-    <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="16px"></a></p>
-    <p align="center"><a href="#popupsignout" data-rel="popup" data-position-to="window" data-transition="pop" ><img class="popphoto" src="images/avatar.png" height="120"></a><br>
-      <font color="#999999" size="2">人员标识<br>
-      <a href="#popupsignout" data-rel="popup" data-position-to="window" data-transition="pop" ><img class="popphoto" src="images/Glyphish/icons/06-magnify@2x.png" height="12"></a></p>
-    <br>
-    <br>
-    <div class="ui-nodisc-icon ui-alt-icon"><!-- Classes added to the wrapper -->
-      <p align="center"> &nbsp; <a href="#panelgrid"  class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext ui-btn-inline">grid</a></p>
+    <!-- Start of first page: #one -->
+    <div data-role="page" id="indexpage">
+
+        <!-- /panel -->
+
+        <div data-role="panel" id="panelgrid" data-position="right" data-display="overlay" data-theme="a">
+            <!-- panel content goes here -->
+            <p align="center">
+                <a href="#">
+                    <img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
+                <font color="#999999" size="2">我的任务<br>
+      </font>
+            </p>
+            <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
+                <li><a href="ongoingTasks.html" rel="external">
+                    <img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
+                <li><a href="assignedTasks.html" rel="external">
+                    <img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
+            </ul>
+            <div class="ui-nodisc-icon ui-alt-icon">
+                <!-- Classes added to the wrapper -->
+                <p align="center"><a href="#">
+                    <img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
+                <p align="center">&nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
+            </div>
+        </div>
+        <!-- /panel -->
+
+        <div data-role="popup" id="popupsignout" data-theme="b" data-overlay-theme="a" class="ui-corner-all">
+            <form>
+                <div style="padding: 10px 20px;">
+                    <p align="center">
+                        <a href="#">
+                            <img class="popphoto" src="images/Glyphish/icons/63-runner@2x.png" height="25px" /></a><br>
+                        firstname, lastname<br>
+                        计划员<br>
+                        <br>
+                        <font color="#999999" size="2">是否退出当前账号?</font>
+                    </p>
+                    <p align="center"><a href="#" data-rel="back" class="ui-btn ui-shadow  ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline">取消</a><a href="#login" data-transition="slidedown" class="ui-btn ui-shadow ui-btn-a ui-corner-all ui-icon-check ui-btn-icon-left ui-btn-inline">确认</a></p>
+                </div>
+            </form>
+        </div>
+        <div data-role="content">
+            <p align="center"><a href="#">
+                <img class="popphoto" src="images/itmslogo.png" height="16px"></a></p>
+            <p align="center">
+                <a href="#popupsignout" data-rel="popup" data-position-to="window" data-transition="pop">
+                    <img class="popphoto" src="images/avatar.png" height="120"></a><br>
+                <font color="#999999" size="2">人员标识 </font>
+                <br>
+                <a href="#popupsignout" data-rel="popup" data-position-to="window" data-transition="pop">
+                    <img class="popphoto" src="images/Glyphish/icons/06-magnify@2x.png" height="12">
+                </a>
+            </p>
+            <br>
+            <br>
+            <div class="ui-nodisc-icon ui-alt-icon">
+                <!-- Classes added to the wrapper -->
+                <p align="center">&nbsp; <a href="#panelgrid" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext ui-btn-inline">grid</a></p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- /page one -->
+    <!-- /page one -->
 
 </body>
 </html>
