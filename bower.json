@@ -1,0 +1,26 @@
+{
+  "name": "ITMS.Mobile",
+  "version": "0.0.0",
+  "dependencies": {
+    "amplify": "~1.1.2",
+    "jquery": "~2.1.1",
+    "jquery-tiny-pubsub": "~0.7.0",
+	"knockoutjs":"~2.2.0",
+    "moment": "~2.7.0",
+    "requirejs": "~2.1.14",
+    "requirejs-text": "~2.0.12",
+    "underscore": "~1.6.0",
+    "validate": "~0.2.0",
+    "less": "~1.7.3"
+  },
+  "description": "ITMS.Mobile GUI",
+  "ignore": [
+    "*.md",
+    "*.json",
+    "Gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

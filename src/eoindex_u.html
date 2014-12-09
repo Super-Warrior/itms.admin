@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iTMS</title>
+<link rel="stylesheet" href="themes/bladecolor.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="js/jquery.mobile.structure-1.4.4.min.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+<div data-role="page" data-theme="a" >
+  <div data-role="panel" id="panelgrid" data-position="right" data-display="overlay" data-theme="a"> 
+    <!-- panel content goes here -->
+    <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
+      <font color="#999999" size="2">我的任务<br>
+      </font></p>
+    <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
+      <li><a href="eoindex.html" rel="external"><img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
+      <li><a href="eoindex_u.html" rel="external"><img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
+    </ul>
+    <div class="ui-nodisc-icon ui-alt-icon"><!-- Classes added to the wrapper -->
+      <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
+      <p align="center"> &nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
+    </div>
+  </div>
+  <!-- /panel -->
+  
+  <div data-role="popup" id="popupLogin" data-theme="b" data-overlay-theme="a" class="ui-corner-all">
+    <form>
+      <div style="padding:10px 20px;">
+        <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/145-persondot@2x.png" height="40px" /></a></p>
+        <label for="un" class="ui-hidden-accessible">Username:</label>
+        <input type="text" name="user" id="un" value="" placeholder="用户名" data-theme="b">
+        <label for="pw" class="ui-hidden-accessible">Password:</label>
+        <input type="password" name="pass" id="pw" value="" placeholder="密码" data-theme="b" data-clear-btn="true">
+        <p align="center"><a href="#indexpage" class="ui-btn ui-btn-a ui-btn-inline ui-shadow  ui-corner-all ui-icon-check ui-btn-icon-left" data-transition="slide">登录</a></p>
+      </div>
+    </form>
+  </div>
+  <div data-role="footer" data-position="fixed" data-theme="b">
+    <div data-role="navbar" data-iconpos="bottom">
+      <ul>
+        <li><a href="main.html#indexpage" rel="external" data-icon="home"> </a></li>
+        <li><a href="#panelgrid" data-icon="grid"> </a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/83-calendar.png" height="25px"></a><br>
+      <font color="#666666" size="2">已计划任务</font></p>
+    <br>
+    <form class="ui-filterable">
+      <div style="padding:10px 20px;">
+        <input id="inset-autocomplete-input" data-type="search" placeholder="搜索项目...">
+      </div>
+    </form>
+    <div style="padding:5px 20px;">
+      <ul data-role="listview"  data-mini="true"data-inset="true" data-filter="true" data-filter-reveal="true" data-input="#inset-autocomplete-input">
+        <li><a href="#eodetail" data-transition="flip">Acura</a></li>
+        <li><a href="#eodetail" data-transition="flip">Audi</a></li>
+        <li><a href="#eodetail" data-transition="flip">BMW</a></li>
+        <li><a href="#eodetail" data-transition="flip">Volvo</a></li>
+      </ul>
+    </div>
+    <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
+  </div>
+</div>
+<div data-role="page" id="eodetail"> 
+  
+  <!-- /panel -->
+  
+  <div data-role="panel" id="panelgrid" data-position="right" data-display="overlay" data-theme="a"> 
+    <!-- panel content goes here -->
+    <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
+      <font color="#999999" size="2">我的任务<br>
+      </font></p>
+    <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
+      <li><a href="eoindex.html" rel="external"><img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
+      <li><a href="#"><img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
+    </ul>
+    <div class="ui-nodisc-icon ui-alt-icon"><!-- Classes added to the wrapper -->
+      <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
+      <p align="center"> &nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
+    </div>
+  </div>
+  <!-- /panel -->
+  
+  <div data-role="popup" id="popupmap" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="15,15"> <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
+    <iframe src="map.html" frameborder="0"  align="center" height="360" seamless></iframe>
+  </div>
+  <div data-role="footer" data-position="fixed" data-theme="b">
+    <div data-role="navbar" data-iconpos="bottom">
+      <ul>
+        <li><a href="main.html#indexpage" rel="external" data-icon="home"> </a></li>
+        <li><a href="#panelgrid" data-icon="grid"> </a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="popup" id="popupeodetail" data-overlay-theme="b" data-theme="b"><a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
+    <ul data-role="listview"  data-inset="true" data-theme="b">
+      <li><img src="images/Glyphish/icons/145-persondot@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2"> 始发：上海通用<br>
+        地址：中国，上海，徐汇，龙华 </font></li>
+      <li><img src="images/Glyphish/icons/195-barcode@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2"> 231313111<br>
+        122/11<br>
+        PO：21453653333<br>
+        HT：56745734525252</font></li>
+      <li><img src="images/Glyphish/icons/40-inbox@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2"> M:1<br>
+        L:2<br>
+        S:6<br>
+        </font></li>
+      <li><img src="images/Glyphish/icons/103-map@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2"> 目的地：海通南京<br>
+        至：中国，江苏，南京，下关</font></li>
+      <li><img src="images/Glyphish/icons/12-eye@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2"> 2014-11-22 13:31<br>
+        DEL01: 接货延迟</font></li>
+    </ul>
+  </div>
+  <div data-role="content">
+    <p align="center"><a href="#"><img class="popphoto" src="images/Glyphish/icons/83-calendar.png" height="25px"></a><br>
+      <font color="#666666" size="2">已计划任务</font></p>
+    <br>
+    <div data-role="collapsibleset" data-theme="b" data-content-theme="b" data-mini="true" data-iconpos="right">
+      <div data-role="collapsible" data-collapsed-icon="search" data-expanded-icon="carat-u">
+        <h2>运单列表</h2>
+        <ul data-role="listview" data-split-icon="location"  data-split-theme="a" data-filter="true" data-filter-theme="b" data-divider-theme="b" data-filter-placeholder="数据筛选" data-filter-theme="b" data-count-theme="a">
+        <li data-role="list-divider">路单: 123456<span class="ui-li-count">2</span></li>
+        <li><a href="#popupeodetail" data-rel="popup" data-position-to="window" data-transition="pop"><font size="1"><strong>2011121111/1112/2</strong></font>
+          <p><strong><font color="#999999">R: </font></strong>2014-12-31</p>
+          <p><strong><font color="#999999">F: </font></strong>上海通用</p>
+          <p><strong><font color="#999999">T: </font></strong>海通码头</p>
+          <p><strong><font color="#999999">P: </font></strong>M3</p>
+          <span class="ui-li-count">在途|延迟</span> </a> <a href="#popupmap" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a></li>
+        <li><a href="#popupeodetail" data-rel="popup" data-position-to="window" data-transition="pop"><font size="1"><strong>2011121111/1112/2</strong></font>
+          <p><strong><font color="#999999">R: </font></strong>2014-12-31</p>
+          <p><strong><font color="#999999">F: </font></strong>上海通用</p>
+          <p><strong><font color="#999999">T: </font></strong>海通码头</p>
+          <p><strong><font color="#999999">P: </font></strong>M3</p>
+          <span class="ui-li-count">在途|延迟</span> </a> <a href="#popupmap" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a></li>
+        <li data-role="list-divider">路单: 333456<span class="ui-li-count">1</span></li>
+        <li><a href="#popupeodetail" data-rel="popup" data-position-to="window" data-transition="pop"><font size="1"><strong>2011121111/1112/2</strong></font>
+          <p><strong><font color="#999999">R: </font></strong>2014-12-31</p>
+          <p><strong><font color="#999999">F: </font></strong>上海通用</p>
+          <p><strong><font color="#999999">T: </font></strong>海通码头</p>
+          <p><strong><font color="#999999">P: </font></strong>M3</p>
+          <span class="ui-li-count">在途|延迟</span> </a> <a href="#popupmap" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a></li>
+        </ul>
+      </div>
+    </div>
+    <p align="center"><a href="#"><img class="popphoto" src="images/itmslogo.png" height="12px"></a></p>
+  </div>
+</div>
+<!-- /page one -->
+</body>
+</html>
