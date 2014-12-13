@@ -18,9 +18,8 @@
     '</div>';
 
 
-    var infoWindow = new google.maps.InfoWindow({
-        content: '<img src="images/itmslogo.png"><br/><center>' + locationText + '</center>'
-    });
+    //var infoWindow = new google.maps.InfoWindow({content: '<img src="images/itmslogo.png"><br/><center>' + locationText + '</center>'});
+    var infoWindow = new google.maps.InfoWindow({content: '<center>' + locationText + '</center>'});
     google.maps.event.addListener(mark, "click", function () { infoWindow.open(map, mark); });
 
     return mark;
