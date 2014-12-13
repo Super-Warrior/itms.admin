@@ -21,6 +21,8 @@
     <script src="lib/knockout.mapping-latest.js"></script>
     <script src="lib/koExternalTemplateEngine_all.js"></script>
     <script src="lib/ko.extentions.js"></script>
+    <script type="text/javascript" src="mapfiles/mapapi.js" charset='utf-8'></script>
+    <script src="lib/knockout-google-maps.js"></script>
 
     <script src="vendor/requirejs/require.js" data-main="app/assignedTasks.js"></script>
     <div data-role="page" data-theme="a">
@@ -111,11 +113,6 @@
             </div>
         </div>
         <!-- /panel -->
-
-        <div data-role="popup" id="popupmap" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="15,15">
-            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
-            <iframe src="map.html" frameborder="0" align="middle" height="360" seamless></iframe>
-        </div>
         <div data-role="footer" data-position="fixed" data-theme="b">
             <div data-role="navbar" data-iconpos="bottom">
                 <ul>
@@ -193,8 +190,9 @@
                         <span data-bind="text:eritnstatusDesc" class="ui-li-count"></span>
 
                     </a>
-                    <a href="#popupmap" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a>
-                </li>
+			       <a href="javascript:void(0);" data-bind="click: function() {$root.viewMap($data);}" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a>
+             
+			    </li>
                 <!-- /ko -->
 
             </script>
@@ -202,6 +200,11 @@
                 <a href="#">
                     <img class="popphoto" src="images/itmslogo.png" height="12px"></a>
             </p>
+        </div>
+
+        <div data-role="popup" id="popupmap" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="15,15">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <iframe id="mapFrame" name="mapFrame" src="map.html" frameborder="0" align="middle" height="360" style="height:360px;" seamless></iframe>
         </div>
     </div>
     <!-- /page one -->

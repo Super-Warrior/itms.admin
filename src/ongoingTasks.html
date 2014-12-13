@@ -8,6 +8,8 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>iTMS</title>
     <link rel="stylesheet" href="themes/bladecolor.min.css" />
+
+   
     <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.5.min.css" />
 
@@ -23,29 +25,40 @@
     <script src="lib/knockout.mapping-latest.js"></script>
     <script src="lib/koExternalTemplateEngine_all.js"></script>
     <script src="lib/ko.extentions.js"></script>
+    <script type="text/javascript" src="mapfiles/mapapi.js" charset='utf-8'></script>
+    <script src="lib/knockout-google-maps.js"></script>
 
     <script src="vendor/requirejs/require.js" data-main="app/ongoingTasks.js"></script>
-
+    
     <div data-role="page" data-theme="a">
         <div data-role="panel" id="panelgrid" data-position="right" data-display="overlay" data-theme="a">
             <!-- panel content goes here -->
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
-                <font color="#999999" size="2">我的任务<br>
-      </font>
+                    <img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" />
+                </a><br>
+                <font color="#999999" size="2">
+                    我的任务<br>
+                </font>
             </p>
             <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
-                <li><a href="ongoingTasks.html" rel="external">
-                    <img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
-                <li><a href="assignedTasks.html" rel="external">
-                    <img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
+                <li>
+                    <a href="ongoingTasks.html" rel="external">
+                        <img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="assignedTasks.html" rel="external">
+                        <img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font>
+                    </a>
+                </li>
             </ul>
             <div class="ui-nodisc-icon ui-alt-icon">
                 <!-- Classes added to the wrapper -->
                 <p align="center">
                     <a href="#">
-                        <img class="popphoto" src="images/itmslogo.png" height="12px"></a>
+                        <img class="popphoto" src="images/itmslogo.png" height="12px">
+                    </a>
                 </p>
                 <p align="center">&nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
             </div>
@@ -63,7 +76,8 @@
         <div data-role="content">
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/Glyphish/icons/113-navigation@2x.png" height="25px"></a><br>
+                    <img class="popphoto" src="images/Glyphish/icons/113-navigation@2x.png" height="25px">
+                </a><br>
                 <font color="#666666" size="2">执行中任务</font>
             </p>
             <br>
@@ -83,7 +97,8 @@
             </div>
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/itmslogo.png" height="12px"></a>
+                    <img class="popphoto" src="images/itmslogo.png" height="12px">
+                </a>
             </p>
         </div>
     </div>
@@ -95,31 +110,41 @@
             <!-- panel content goes here -->
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" /></a><br>
+                    <img class="popphoto" src="images/Glyphish/icons/44-shoebox@2x.png" height="40px" />
+                </a><br>
                 <font color="#999999" size="2">我的任务</font>
                 <br>
             </p>
             <ul data-role="listview" data-inset="true" data-theme="b" class="ui-nodisc-icon ui-alt-icon">
-                <li><a href="#">
-                    <img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font></a></li>
-                <li><a href="assignedTasks.html" rel="external">
-                    <img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font></a></li>
+                <li>
+                    <a href="#">
+                        <img src="images/Glyphish/icons/113-navigation.png" alt="ongoing" class="ui-li-icon ui-corner-none"><font size="2">执行中任务</font>
+                    </a>
+                </li>
+                <li>
+                    <a href="assignedTasks.html" rel="external">
+                        <img src="images/Glyphish/icons/83-calendar.png" alt="plan" class="ui-li-icon"><font size="2">已计划任务</font>
+                    </a>
+                </li>
             </ul>
             <div class="ui-nodisc-icon ui-alt-icon">
                 <!-- Classes added to the wrapper -->
                 <p align="center">
                     <a href="#">
-                        <img class="popphoto" src="images/itmslogo.png" height="12px"></a>
+                        <img class="popphoto" src="images/itmslogo.png" height="12px">
+                    </a>
                 </p>
                 <p align="center">&nbsp; <a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-inline">back</a></p>
             </div>
         </div>
         <!-- /panel -->
 
-        <div data-role="popup" id="popupmap" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="15,15">
-            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
-            <iframe src="map.html" frameborder="0" align="middle" height="360" seamless></iframe>
-        </div>
+
+
+
+
+
+
         <div data-role="footer" data-position="fixed" data-theme="b">
             <div data-role="navbar" data-iconpos="bottom">
                 <ul>
@@ -155,7 +180,8 @@
                 <li>
                     <img src="images/Glyphish/icons/103-map@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2" data-bind="text:'目的地：'+selectedItem.recCustomerDesc()"></font>
                     <br>
-                    <font size="2" data-bind="text:'至：'+selectedItem.recLocation()"></font></li>
+                    <font size="2" data-bind="text:'至：'+selectedItem.recLocation()"></font>
+                </li>
                 <li>
                     <img src="images/Glyphish/icons/12-eye@2x.png" alt="France" class="ui-li-icon ui-corner-none"><font size="2" data-bind="text:selectedItem.reqDelDate()"></font><br>
                     <font size="2" data-bind="text:selectedItem.eritnstatusDesc"></font>
@@ -165,7 +191,8 @@
         <div data-role="content">
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/Glyphish/icons/113-navigation@2x.png" height="25px"></a><br>
+                    <img class="popphoto" src="images/Glyphish/icons/113-navigation@2x.png" height="25px">
+                </a><br>
                 <font color="#666666" size="2">执行中任务</font>
             </p>
             <br>
@@ -176,8 +203,7 @@
 
                     <ul data-role="listview" data-split-icon="location" data-split-theme="a" data-filter="true"
                         data-filter-theme="b" data-divider-theme="b" data-filter-placeholder="数据筛选"
-                        data-filter-theme="b" data-count-theme="a" data-bind="jqmTemplate: {name:'detailItem', foreach:eoList},jqmRefreshList:eoList">
-                    </ul>
+                        data-filter-theme="b" data-count-theme="a" data-bind="jqmTemplate: {name:'detailItem', foreach:eoList},jqmRefreshList:eoList"></ul>
                 </div>
             </div>
 
@@ -188,7 +214,7 @@
                 <!-- ko ifnot: (isSum) -->
                 <li>
                     <a href="javascript:void(0);" data-bind="click: function() {$root.selectItem($data);}" data-rel="popup" data-position-to="window" data-transition="pop">
-                        <font size="3"><strong  data-bind="text:eo+'/'+erID+'/'+erITN"></strong></font>
+                        <font size="3"><strong data-bind="text:eo+'/'+erID+'/'+erITN"></strong></font>
                         <p><strong><font color="#999999">R: </font></strong><span data-bind="text:reqDelDate"></span></p>
                         <p><strong><font color="#999999">S: </font></strong><span data-bind="text:routeClassTimeS"></span></p>
                         <p><strong><font color="#999999">E: </font></strong><span data-bind="text:routeClassTimeE"></span></p>
@@ -199,17 +225,43 @@
                         <span data-bind="text:eritnstatusDesc" class="ui-li-count"></span>
 
                     </a>
-                    <a href="#popupmap" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a>
+                    <a href="javascript:void(0);" data-bind="click: function() {$root.viewMap($data);}" data-rel="popup" data-position-to="window" data-transition="flow">GEO</a>
                 </li>
                 <!-- /ko -->
 
             </script>
             <p align="center">
                 <a href="#">
-                    <img class="popphoto" src="images/itmslogo.png" height="12px"></a>
+                    <img class="popphoto" src="images/itmslogo.png" height="12px">
+                </a>
             </p>
+        </div>
+
+
+
+
+        <div data-role="popup" id="popupmap" data-overlay-theme="b" data-theme="b" data-corners="false" data-tolerance="15,15">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <iframe id="mapFrame" name="mapFrame" src="map.html" frameborder="0" align="middle" height="360" style="height:360px;" seamless></iframe>
         </div>
     </div>
     <!-- /page one -->
+
+    <!--<div data-role="page" id="popupmap">
+     
+        <div data-role="header" style="background-color:#33ccff" data-position="fixed" data-theme="c">
+            <h1><font size="3">地图</font></h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-bar-c" data-bind="with:$root.mapInfo">
+                <div data-role="content">
+                   <div id="map_canvas" style="height:600px;"
+                         data-bind="gmaps:{center:center,markers:markers,zoom:zoom,polylinePoints:polylinePoints}"></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
 </body>
 </html>
