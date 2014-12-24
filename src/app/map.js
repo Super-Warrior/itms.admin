@@ -13,7 +13,7 @@
                 '<div id="siteNotice">' +
                 '</div>' +
                 '<div id="bodyContent">' +
-                text
+                text +
     '</div>' +
     '</div>';
 
